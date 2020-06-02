@@ -1,2 +1,2 @@
 # dtlartifacts
-DTL artifacts
+Artifacts for DevTest labs.
