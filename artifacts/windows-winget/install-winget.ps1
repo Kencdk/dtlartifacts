@@ -40,7 +40,7 @@ trap
     $message = $Error[0].Exception.Message
     if ($message)
     {
-        Write-Host -Object "`nERROR: $message" -ForegroundColor Red
+        Write-Host -Object "`nERROR: $message at $($Error[0].Exception.StackTrace)" -ForegroundColor Red
     }
 
     Write-Host "`nThe artifact failed to apply.`n"
@@ -92,7 +92,7 @@ try
     Write-Host "Determined $($latestRelease.tag_name) to be the latest release"
     
     $tempFolder = New-TemporaryFile | %{ rm $_; mkdir $_ }
-    $tempFile = Downloadrelease($latestRelease)
+    $tempFile = Downloadrelease $latestRelease $tempFolder
 
     write-host "Installing .appxbundle package"
     Add-AppxPackage -Path $tempFile
