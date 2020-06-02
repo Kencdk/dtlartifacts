@@ -63,7 +63,7 @@ function FindLatestGithubRelease(){
     $releases = "https://api.github.com/repos/$repo/releases"
 
     Write-Host Determining latest release
-    $releasesBlob = Invoke-WebRequest $releases
+    $releasesBlob = Invoke-WebRequest $releases -UseBasicParsing
     $releasesObj = ConvertFrom-Json -InputObject $releasesBlob
     return $releasesObj
 }
@@ -73,7 +73,7 @@ function DownloadRelease($releasesObj, $tempFolder) {
     Write-Host "Downloading asset: $downloadurl into $tempFolder"
     
     $tempFile = join-path $tempFolder $downloadurl.split("/")[-1]
-    Invoke-WebRequest $downloadurl -OutFile $tempFile
+    Invoke-WebRequest $downloadurl -OutFile $tempFile -UseBasicParsing
 
     return $tempFile
 }
