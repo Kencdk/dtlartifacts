@@ -1,0 +1,14 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
+    "title": "Write date",
+    "publisher": "Microsoft",
+    "description": "Writes the current date time to a file.",
+    "tags": [
+        "Windows",
+        "Dummy"
+    ],
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./write-dummy.ps1', '\"')]"
+    }
+}
