@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
+    "title": "Dummy password artifact",
+    "publisher": "Kenchr",
+    "description": "Dummy artifact to play with passwords.",
+    "tags": [
+        "Windows",
+        "dummy"
+    ],
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./dummy-passwords.ps1', ' -dummypassword ''', parameters('password'), '\"')]"
+    },
+    "parameters": { 
+        "password": {
+            "type": "securestring",
+            "displayName": "Dummy password",
+            "description": "Password to pass to the dummy script."
+        }
+    }
+}
