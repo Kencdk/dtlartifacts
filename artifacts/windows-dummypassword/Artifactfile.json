@@ -9,7 +9,7 @@
     ],
     "targetOsType": "Windows",
     "runCommand": {
-        "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./dummy-passwords.ps1', ' -dummypassword ''', parameters('password'), '''\"')]"
+        "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./dummy-passwords.ps1', ' -password ''', parameters('password'), '''\"')]"
     },
     "parameters": { 
         "password": {
