@@ -9,4 +9,9 @@ Param(
     [string] $password
 )
 
-"Password length is $($password.length)" | Add-Content "c:\temp\dummypasswords.log"
+if(-not (Test-Path "c:\\temp\\"))
+{
+    New-Item -Path "c:\" -Name "temp" -ItemType "directory" | out-null
+}
+
+"Password length is $($password.length)" | Out-File -FilePath "c:\\temp\\dummypasswords.log"
