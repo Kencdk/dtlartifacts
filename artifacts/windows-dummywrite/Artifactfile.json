@@ -1,0 +1,21 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
+    "title": "Dummy file write",
+    "publisher": "Kenchr",
+    "description": "Writes an input string to a specified temp file.",
+    "tags": [
+        "Windows",
+        "dummy"
+    ],
+    "targetOsType": "Windows",
+    "runCommand": {
+        "commandToExecute": "[concat('powershell.exe -ExecutionPolicy bypass \"& ./dummy-write.ps1', ' -data ''', parameters('data'), '''\"')]"
+    },
+    "parameters": { 
+        "data": {
+            "type": "string",
+            "displayName": "Dummy data",
+            "description": "Data to pass to the dummy script."
+        }
+    }
+}
