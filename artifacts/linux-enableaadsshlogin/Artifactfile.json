@@ -1,14 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
-    "title": "Az login",
+    "title": "Enable AAD SSH login",
     "publisher": "Kenchr",
-    "description": "Login as managed identity on linux",
+    "description": "Configure virtual machine for SSH login using tokens from AAD",
     "tags": [
         "Linux"
     ],
     "targetOsType": "Linux",
     "runCommand": {
-        "commandToExecute": "[concat('bash script.sh ', parameters('identity'))]"
+        "commandToExecute": "[concat('bash script.sh ', parameters('identity'), ' ', parameters('resourceId'))]"
 
     },
     "parameters": {
@@ -17,6 +17,12 @@
             "displayName": "Identity",
             "allowEmpty": false,
             "description": "The identity (object Id) to authenticate as."
+        },
+        "resourceId": {
+            "type": "string",
+            "displayName": "VM Resource Id",
+            "allowEmpty": false,
+            "description": "Resource id of the virtual machine."
         }
     }
 }
