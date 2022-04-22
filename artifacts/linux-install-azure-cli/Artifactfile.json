@@ -1,0 +1,14 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Azure/azure-devtestlab/master/schemas/2016-11-28/dtlArtifacts.json",
+    "title": "Install Azure cli",
+    "publisher": "Kenchr",
+    "description": "Install the Azure Cli on a debian based distribution.",
+    "tags": [
+        "Linux"
+    ],
+    "targetOsType": "Linux",
+    "runCommand": {
+        "commandToExecute": "[concat('bash script.sh')]"
+
+    }
+}
