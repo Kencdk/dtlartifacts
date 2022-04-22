@@ -1,4 +1,9 @@
 #!/bin/bash
+function finish {
+    echo "FAILED AT $(date)"
+}
+trap finish EXIT
+
 managed_identity="$1"
 virtualmachine_resourceid="$2"
 echo "Using $managed_identity"
