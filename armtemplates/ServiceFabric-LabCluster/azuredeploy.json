@@ -63,13 +63,16 @@
             }
         },
         "tenantId": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": ""
         },
         "clusterApplication": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": ""
         },
         "clientapplication": {
-            "type": "string"
+            "type": "string",
+            "defaultValue": ""
         }
     },
     "variables": {
