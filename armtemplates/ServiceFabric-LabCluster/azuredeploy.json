@@ -64,16 +64,32 @@
         },
         "tenantId": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "",
+            "metadata": {
+                "description": "Tenant the cluster- and clientapplication belongs to. Required for Windows clusters."
+            }
         },
         "clusterApplication": {
             "type": "string",
-            "defaultValue": ""
+            "defaultValue": "",
+            "metadata": {
+                "description": "Client id of cluster application. Required for Windows clusters."
+            }
         },
         "clientapplication": {
             "type": "string",
-            "defaultValue": ""
-        }
+            "defaultValue": "",
+            "metadata": {
+                "description": "Client id of client application. Required for Windows clusters."
+            }
+        },
+        "storageAccountEndPoint": {
+            "type": "string",
+            "defaultValue": "",
+            "metadata": {
+              "description": "Location of the Cluster. Required for Linux clusters."
+            }
+          }
     },
     "variables": {
         "quickstartRepoRoot": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/quickstarts/microsoft.servicefabric/",
@@ -236,6 +252,9 @@
                     },
                     "nt0InstanceCount": {
                         "value": "[variables('nt0InstanceCount')]"
+                    },
+                    "storageAccountEndPoint": {
+                        "value": "[parameters('storageAccountEndPoint')]"
                     }
                 }
             }
