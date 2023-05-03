@@ -233,15 +233,6 @@
                     },
                     "nt0InstanceCount": {
                         "value": "[variables('nt0InstanceCount')]"
-                    },
-                    "tenantId": {
-                        "value": "[parameters('tenantId')]"
-                    },
-                    "clusterApplication": {
-                        "value": "[parameters('clusterApplication')]"
-                    },
-                    "clientapplication": {
-                        "value": "[parameters('clientapplication')]"
                     }
                 }
             }
