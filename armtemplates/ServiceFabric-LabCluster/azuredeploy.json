@@ -82,14 +82,7 @@
             "metadata": {
                 "description": "Client id of client application. Required for Windows clusters."
             }
-        },
-        "storageAccountEndPoint": {
-            "type": "string",
-            "defaultValue": "",
-            "metadata": {
-              "description": "Location of the Cluster. Required for Linux clusters."
-            }
-          }
+        }
     },
     "variables": {
         "quickstartRepoRoot": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/quickstarts/microsoft.servicefabric/",
@@ -254,7 +247,7 @@
                         "value": "[variables('nt0InstanceCount')]"
                     },
                     "storageAccountEndPoint": {
-                        "value": "[parameters('storageAccountEndPoint')]"
+                        "value": "[resourceGroup().location]"
                     }
                 }
             }
